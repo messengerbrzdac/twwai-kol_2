@@ -1,11 +1,21 @@
 import paramDAO from '../DAO/paramDAO';
+const item = {
 
+}
 function create() {
     async function query() {
-        //funkcja pobierająca wszystkie wpisy
+        let result = paramDAO.query();
+        if (result) {
+            return result;
+        }
     }
 
-        //add
+    async function post() {
+        let result = await paramDAO.post();
+        if (result) {
+            return result;
+        }
+    }
 
     return {
         query: query,
